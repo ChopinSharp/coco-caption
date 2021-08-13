@@ -1,3 +1,6 @@
 *.pyc
 pycocoevalcap/wmd/data/GoogleNews-vectors-negative300.bin
 pycocoevalcap/spice/lib
+pycocoevalcap/spice/cache/*
+pycocoevalcap/spice/tmp/*
+pycocoevalcap/tokenizer/tmp*
