@@ -23,9 +23,10 @@ class Spice:
     """
     Main Class to compute the SPICE metric 
     """
-    def __init__(self):
+    def __init__(self, pid):
         cwd = os.path.dirname(os.path.abspath(__file__))
-        cache_dir=os.path.join(cwd, CACHE_DIR, str(time.time()))
+        # cache_dir=os.path.join(cwd, CACHE_DIR, str(time.time()))
+        cache_dir=os.path.join(cwd, CACHE_DIR, str(pid))
         self.cache_dir = cache_dir
         if not os.path.exists(cache_dir):
           os.makedirs(cache_dir)
@@ -76,7 +77,7 @@ class Spice:
           '-silent'
         ]
         subprocess.check_call(spice_cmd, 
-            cwd=os.path.dirname(os.path.abspath(__file__)))
+            cwd=os.path.dirname(os.path.abspath(__file__)), stdout=subprocess.DEVNULL)
 
         # Read and process results
         with open(out_file.name) as data_file:    

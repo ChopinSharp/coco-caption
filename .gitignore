@@ -1,1 +1,3 @@
 *.pyc
+pycocoevalcap/wmd/data/GoogleNews-vectors-negative300.bin
+pycocoevalcap/spice/lib
